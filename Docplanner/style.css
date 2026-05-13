@@ -1,0 +1,221 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:var(--secondary-color);
+    margin: 0;
+    padding: 0px;
+    overflow-x: hidden;     /*  Désactive la barre de défilement horizontale */
+}
+:root { 
+    --primary-color:#00ccb1;
+    --secondary-color: white;
+    --navbar-color: #919596;
+    --text-color: #212529;
+    --block4-color: #daf7f5;
+}
+header {
+    position: -webkit-sticky; /* pour fixer la barre supérieure de Header */
+    position: sticky;
+    padding: 30px 0px ;
+    width: 100%; 
+    top: 0;          
+    left: 0; 
+    background-color:var(--secondary-color);
+    height: 20px;
+    z-index: 1000;
+}
+.docplanner-Logo {
+    position: fixed;
+    top: 17px;
+    left: 16%;
+    width: 22px;
+    height: 22px;
+}
+.navbar-brand {
+    position: fixed;
+    display: flex;  /* pour aligner les éléments horizontalement */    
+    justify-content:flex-start; /* pour afficher les éléments à gauche */
+    top: 0%;
+    left: 18%;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+.nav-links {
+    position: fixed; /* pour positionner les liens de navigation de manière fixe */
+    top: 20px; /* pour positionner les liens de navigation à 20px du haut */
+    right: 20%; /* pour positionner les liens de navigation à 20px de la droite */
+    width: 100%; /* pour que les liens de navigation prennent toute la largeur de l'écran */
+    display: flex; /* pour aligner les éléments horizontalement */
+    justify-content: flex-end; /* pour afficher les éléments à droite */
+    gap: 20px; /* espace entre les liens */
+    list-style: none; /* pour enlever les puces des listes */
+    text-decoration: none; /* Pour désactiver le soulignement */
+    
+}
+a {
+    text-decoration: none; 
+    color: var(--navbar-color)
+}
+#navbar-First {
+    color: var(--primary-color);
+}
+.main-logo {
+  display: block;  /* affichage en block */
+  margin-left: auto; /* une astuce CSS très utilisée pour pousser un élément vers la droite de son conteneur */
+  margin-right: auto; /* une astuce CSS très utilisée pour pousser un élément vers la droite de son conteneur */
+    width: 50px;
+    height: 50px;
+}
+h1 {
+    text-align: center; /* Pour aligner le texte au centre */
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: normal; /* Pour annuler l'écriture en gras */
+}
+.paragraph {
+  display: flex;          /* Active Flexbox */
+  justify-content: center; /* Centre les cartes horizontalement */
+  gap: 10px;              /* Espace entre les deux cartes */
+  padding: 20px;
+  right: 20%;
+}
+.parag {
+  background: none; /* Annuler le background color */
+  border:none; /* Annuler la bordure */
+  color: var(--navbar-color) ;
+  padding: 20px;
+  width: 45%;             /* Largeur de chaque carte */
+  width: 500px;
+  font-size: 16px;
+}
+.container {
+  display: flex;          /* Active Flexbox */
+  justify-content: center; /* Centre les cartes horizontalement */
+  gap: 10px;              /* Espace entre les deux cartes */
+  padding: 20px;
+  width:70%;
+  height: 400px;
+  margin-left: 14%;
+  margin-right: auto;
+}
+.card {
+    display: flex;      
+    justify-content: center;
+    padding: 20px;
+    text-align: left;
+    height: 300px;
+}
+.card:hover { /* Changer le curseur en 'main' sur un bouton au survol */
+       cursor: pointer;
+        border-color: #fff;
+       box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+       /* box-shadow: horizontal vertical flou étalement couleur */
+     filter: brightness(1.1); /* 110% de luminosité */
+}
+.card1 {
+    background-color: #00ccb1;
+    color: var(--secondary-color);
+    
+}
+.card2 {
+    background-color: #3e83e0;
+    color: var(--secondary-color);
+}
+.card3 {
+    background-color: #1b2735;
+    color: var(--secondary-color);
+}
+.card-title {
+    top: 30%;
+    text-decoration: none;
+    font-size: 30px;  
+}
+.card-text {
+    font-size: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}
+.btn-primary {
+    position: absolute;
+    bottom: 10%;
+    padding-bottom: 0px;
+    background: none;
+    border: none;
+}
+.icn-patient {
+ height: 50px;
+   width: 30px;
+
+}
+.icn-doctors {
+ height: 50px;
+   width: 30px;
+}
+.icn-clinics {
+ height: 50px;
+   width: 30px;
+
+}
+
+btn btn-primary {
+    color: var(--secondary-color);
+}
+
+
+
+.block3 {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr; /* Deux colonnes de taille différent */
+  gap: 20px;
+  padding-top: 40px;
+  
+}
+
+.txt-card-block3 {
+    padding: 50px 0px;
+    
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Fusionne les bordures */
+    margin: 20px 0;
+    font-size: 18px;
+    font-family: sans-serif;
+    
+}
+
+.txt-block3 {
+    color: var(--primary-color);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+}
+
+.logo-tab {
+    display: inline;
+    filter: grayscale(100%);/* 100% = noir et blanc total */
+    opacity: 0.5; /* 50% de transparence par défaut */
+    
+}
+.logo-tab:hover {
+    filter: none;
+    opacity: unset;
+}
+.logo-cat1 {
+    width: 150px;
+    height: 60px;
+}
+
+
+.block4 {
+   
+    
+    background-color: var(--block4-color);
+    width: 100vw;
+    height: 500px;
+    margin-top: 200px;
+    margin-left: auto;
+   
+    
+
+}
