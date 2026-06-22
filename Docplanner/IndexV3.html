@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- Mettre le CDN CSS avant stylesheet style.css est conseillé pour l'application des propriétés CSS du reste du code -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleV3.css">
     <link rel="icon" href="Asset/logo.png" type="image/png">
     <title>Docplanner Group</title>
     
 </head>
-<body>
+<>
     <header>
         <nav>
             <div class="navbar">
@@ -40,59 +40,110 @@
   
   <div class="container">
       <div class="row">
+
+
+
         <div class="col-md-4">
 
 
-        
-         <div class="card card1">
-          <div class="card-body">
+<!-- Card 1 -->
+<div class="card card-patients" onclick="this.classList.toggle('is-flipped')">
+  <div class="card-inner">
+    <div class="card-front">
+<div class="card-body">
             <img src="Asset/icon-patients.svg" alt="Icone patients" class="icn-patient" >
               <h5 class="card-title">For patients</h5>
-              <p class="card-text">
+              <p class="card-text"><br>
                 Find a doctor, book a visit and solve any health-related doubt
               </p>
-              <a class="btn btn-primary">Choose Country <span class="btn-icon">&nbsp&nbsp⌵</span></a>
+              <a class="btn-Choose">Choose Country <span class="btn-icon">&nbsp&nbsp⌵</span></a>
               <!--  Span pour insérer un caractère spécial -->
             </div>
             </div>
-          </div>
-          
+  
+    <div class="card-back">
+      <div class="card-body"> 
+      <div class="country-card"> 
+              <p class="Country-List-Left"><ul> <li> Argentina </li>  <li> Chile </li>  <li> Czech </li> <li> Italy </li><li> Peru </li><li> Portugal </li><li> Turkey </li></ul></p>
+              <p class="Country-List-Right"><ul> <li>  Brazil </li><li> Colombia </li><li> Germany </li><li> Mexico </li><li> Poland </li> <li> Spain </li></ul></p>
+      </div>
+      </div>
+    </div>
+    </div>
 
+</div>
+</div>
 
-                <div class="col-md-4">
-          <div class="card card2">
-            <div class="card-body">
+<div class="col-md-4">
+
+<!-- Card 2 -->
+    <div class="card card-doctors" onclick="this.classList.toggle('is-flipped')">
+  
+  <div class="card-inner">
+    <div class="card-front">
+<div class="card-body">
               <img src="Asset/icon-doctors.svg" alt="Icone doctors" class="icn-doctors" >
               <h5 class="card-title">For doctors</h5>
-              <p class="card-text">
+              <p class="card-text"><br>
                Save time managing visits and cut no-shows by half
               </p>
-             <a class="btn btn-primary">Choose Country <span class="btn-icon">&nbsp&nbsp⌵</span></a>
+             <a class="btn-Choose">Choose Country <span class="btn-icon">&nbsp&nbsp⌵</span></a>
             </div>
-          </div>
-        </div>
+            </div>
+  
+    <div class="card-back">
+      <div class="card-body"> 
+                  <div class="country-card"> 
+              <p class="Country-List-Left"><ul> <li> Argentina </li>  <li> Chile </li>  <li> Czech </li> <li> Italy </li><li> Peru </li><li> Spain </li></ul></p>
+              <p class="Country-List-Right"><ul> <li>  Brazil </li><li> Colombia </li><li> Germany </li><li> Mexico </li><li> Poland </li> <li> Turkey </li></ul></p>
+            </div>
+            </div>
+    </div>
+    </div>
 
+</div>
+</div>
 
+<div class="col-md-4">
 
-                <div class="col-md-4">
-          <div class="card card3">
-            <div class="card-body">
+<!-- Card 3 -->
+  <div class="card card-clinics" onclick="this.classList.toggle('is-flipped')">
+  <div class="card-inner">
+    <div class="card-front">
+<div class="card-body">
               <img src="Asset/icon-clinics.svg" alt="Icone clinics" class="icn-clinics" >
               <h5 class="card-title">For clinics</h5>
-              <p class="card-text">
+              <p class="card-text"><br>
               Deliver an exceptional patient experience in your clinic
               </p>
-              <a class="btn btn-primary">Choose your option<span class="btn-icon">&nbsp&nbsp⌵</span></a>
-         </div>
-          </div>
-           </div>
+              <a class="btn-Choose">Choose your option<span class="btn-icon">&nbsp&nbsp⌵</span></a>
+            </div>
+            </div>
+  
+    <div class="card-back">
+      <div class="card-body"> 
+                             <div class="country-card"> 
+              <p class="Country-List-Left"><ul><p class="pcountry">2 to 20 <br> specialists</p> <li> Brazil </li>  <li> Czech </li>  <li> Italy </li> <li> Mexico </li><li> Poland </li><li> Spain </li><li> Turkey </li></ul></p>
+              <p class="Country-List-Right"><ul><p class="pcountry"> more than 20 <br> specialists</p> <li>  Brazil </li><li> Italy </li><li> Mexico </li><li> Poland </li> <li> Spain </li></ul></p>
+            </div>
+            </div>
+    </div>
+  
 
 
+    </div>
+  
+
+
+</div>
+  </div>
+</div>
+</div>
 
 <div class="block3">
 
   <!-- Colonne 1 : texte + card texte -->
-  <div class="card-block3">
+  <div class="block3-left">
     <p class="txt-block3">We are a global company<br> with local culture</p>
   </div>
 
@@ -118,8 +169,6 @@
       </tr>
     </table>
   </div>
-</div>
-</div>
 </div>
 
 </div>
@@ -188,15 +237,10 @@ active doctors</h2>
   <p class="paragraph-b5">More than 2800 team mates share our vision, goals and passion. With offices in Amsterdam (HQ), Warsaw, Barcelona, Berlin, Istanbul, Rome, Rio, Bologna, Mexico City and Curitiba, we’re always looking for great people to join our mission of helping people live longer, healthier lives.</p>
 </div>
 
-
-
-
 <div class="block6">
-
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card-b6">
+<div class="row">
+  <div class="cards-container">
+    <div class="card-left">
       <img src="Asset/warsaw.png" class="card-img-b6" alt="Warsaw">
       <div class="card-body-b6">
         <h5 class="card-title-b6">Warsaw</h5>
@@ -204,8 +248,8 @@ active doctors</h2>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card-b6">
+  <div class="cards-container">
+    <div class="card-middle">
       <img src="Asset/barcelona.jpg" class="card-img-b6" alt="barcelona">
       <div class="card-body-b6">
         <h5 class="card-title-b6">Barcelona</h5>
@@ -213,8 +257,8 @@ active doctors</h2>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card-b6">
+  <div class="cards-container">
+    <div class="card-right">
       <img src="Asset/berlin.jpg" class="card-img-b6" alt="berlin">
       <div class="card-body-b6">
         <h5 class="card-title-b6">Berlin</h5>
@@ -222,8 +266,9 @@ active doctors</h2>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card-b6">
+  <div class="row">
+    <div class="cards-container">
+    <div class="card-left">
       <img src="Asset/istanbul.jpg" class="card-img-b6" alt="istanbul">
       <div class="card-body-b6">
         <h5 class="card-title-b6">Istanbul</h5>
@@ -231,8 +276,8 @@ active doctors</h2>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card-b6">
+  <div class="cards-container">
+    <div class="card-middle">
       <img src="Asset/roma.jpg" class="card-img-b6" alt="roma">
       <div class="card-body-b6">
         <h5 class="card-title-b6">Roma</h5>
@@ -240,17 +285,18 @@ active doctors</h2>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card-b6">
+  <div class="cards-container">
+    <div class="card-right">
       <img src="Asset/bologne.jpg" class="card-img-b6" alt="bologne">
       <div class="card-body-b6">
         <h5 class="card-title-b6">Bologne</h5>
          <button type="button" class="btn-b6">SEE OPENINGS</button>
       </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card-b6">
+  </div></div>
+<div class="row">
+  <div class="cards-container">
+    <div class="card-left">
       <img src="Asset/curitiba.jpg" class="card-img-b6" alt="curitiba">
       <div class="card-body-b6">
         <h5 class="card-title-b6">Curitiba</h5>
@@ -258,8 +304,8 @@ active doctors</h2>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card-b6">
+  <div class="cards-container">
+    <div class="card-middle">
       <img src="Asset/rio.jpg" class="card-img-b6" alt="rio">
       <div class="card-body-b6">
         <h5 class="card-title-b6">Rio de Janeiro</h5>
@@ -267,8 +313,8 @@ active doctors</h2>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card-b6">
+  <div class="cards-container">
+    <div class="card-right">
       <img src="Asset/mexico.jpg" class="card-img-b6" alt="mexico">
       <div class="card-body-b6">
         <h5 class="card-title-b6">Mexico City</h5>
@@ -276,8 +322,10 @@ active doctors</h2>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card-b6">
+  </div>
+  <div class="row">
+  <div class="cards-container">
+    <div class="card-left">
       <img src="Asset/bogota.jpg" class="card-img-b6" alt="Bogota">
       <div class="card-body-b6">
         <h5 class="card-title-b6">Bogota</h5>
@@ -285,8 +333,8 @@ active doctors</h2>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card-b6">
+  <div class="cards-container">
+    <div class="card-middle">
       <img src="Asset/Amsterdam.jpg" class="card-img-b6" alt="Amsterdam">
       <div class="card-body-b6">
         <h5 class="card-title-b6">Amsterdam</h5>
@@ -294,10 +342,15 @@ active doctors</h2>
       </div>
     </div>
   </div>
+    <div class="cards-container">
+    <div class="card-right-last">
+    </div>
+  </div>
+</div>
 </div>
 
-
 </div>
+
 
 <div class="block7">
   <h1 class="Title-b7">Sounds interesting? Join us now!</h1>

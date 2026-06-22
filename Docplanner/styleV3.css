@@ -12,6 +12,8 @@ body {
     --text-color: #212529;
     --block4-color: #daf7f5;
     --light-black: #8b9497;
+    --blue-color:#3e83e0 ;
+    --DarkBlue-color: #1b2735 ;
 }
 header {
     position: -webkit-sticky; /* pour fixer la barre supérieure de Header */
@@ -89,68 +91,108 @@ h1 {
   width: 500px;
   font-size: 16px;
 }
+
 .container {
   display: flex;          /* Active Flexbox */
   justify-content: center; /* Centre les cartes horizontalement */
   gap: 10px;              /* Espace entre les deux cartes */
   padding: 20px;
-  width:70%;
+  width: 70%;
   height: 400px;
   margin-left: 14%;
   margin-right: auto;
 }
+
+
+/* --- CONFIGURATION REQUIS POUR L'EFFET 3D --- */
+
 .card {
-    display: flex;      
+position: relative;  /* Important ! */
+width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: 300px;
+  height: 600px;
+  perspective: 1000px; /* Crée l'effet de profondeur */
+  cursor: pointer;     /* Change le curseur en main au survol */
+}
+
+.card-inner {
+      display: flex;      
     justify-content: center;
     padding: 20px;
     text-align: left;
-    height: 300px;
+    height: 350px;
     transition: all 0.2s ease-in-out; /* Assure la fluidité de l'animation */
     cursor: pointer;
-}
-.card:hover { /* Changer le curseur en 'main' sur un bouton au survol */
-       cursor: pointer;
-        border-color: #fff;
-       box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
-       /* box-shadow: horizontal vertical flou étalement couleur */
-     filter: brightness(1.1); /* 110% de luminosité */
-}
-/* Animation au clic */
-.card:active {
-  transform: scale(0.95) translateY(5px); /* Réduit la taille et déplace vers le bas */
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); /* Réduit l'ombre pour simuler l'enfoncement */
+  transition: transform 0.6s;   /* Vitesse de la rotation */
+  transform-style: preserve-3d;   /* Active la 3D pour les enfants */
+  
 }
 
-.card1 {
-    background-color: #00ccb1;
-    color: var(--secondary-color);
-    
+/* C'est cette classe, activée au clic, qui déclenche la rotation */
+.card.is-flipped .card-inner {
+  transform: rotateY(180deg);
 }
-.card2 {
-    background-color: #3e83e0;
-    color: var(--secondary-color);
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Masque le dos de la face retournée */
+  
+  /* --- DESIGN VISUEL (OPTIONNEL) --- */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  color: white;
 }
-.card3 {
-    background-color: #1b2735;
-    color: var(--secondary-color);
-}
+
+.card-patients .card-front  { background-color: var(--primary-color); }
+.card-patients .card-back   { background-color: var(--primary-color);transform: rotateY(180deg); /* Initialement retourné */
+ }
+
+.card-doctors .card-front   { background-color: var(--blue-color); } 
+.card-doctors .card-back    { background-color: var(--blue-color);  transform: rotateY(180deg); /* Initialement retourné */}
+
+.card-clinics .card-front   { background-color: var(--DarkBlue-color); } 
+.card-clinics .card-back    { background-color: var(--DarkBlue-color); transform: rotateY(180deg); /* Initialement retourné */ }
+
+
 .card-title {
     top: 30%;
     text-decoration: none;
     font-size: 30px;  
+    font-weight:lighter;
 }
+
 .card-text {
+    font-weight:200;
     font-size: 20px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight:lighter;
     text-decoration: none;
+
 }
-.btn-primary {
+.btn-Choose {
     position: absolute;
     bottom: 10%;
     padding-bottom: 0px;
     background: none;
     border: none;
+    color:white;
 }
+
+
+
+.btn-Choose:hover {
+    color: var(--secondary-color);
+    background-color: none;
+}
+
 .icn-patient {
  height: 50px;
    width: 30px;
@@ -166,22 +208,69 @@ h1 {
 
 }
 
-btn btn-primary {
-    color: var(--secondary-color);
+
+.country-card {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+   
+    row-gap: 20px;
+    padding-left: 0px;
+    padding-top: 30px;
 }
 
+.Country-List-Left {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  
+}
 
+.Country-List-Right {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 35px;
+}
+
+li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.pcountry {
+    font-size: 15px ;
+   font-weight: lighter;
+}
 
 .block3 {
   display: grid;
   grid-template-columns: 0.6fr 1.4fr; /* Deux colonnes de taille différent */
   gap: 20px;
   padding-top: 40px;
-  
 }
 
+.block3-left {
+    margin-left: 210px ;
+}
+
+.card-block3 {
+    margin-left: 120px; 
+}
+
+
+
+
 .txt-card-block3 {
-    padding: 50px 0px;
+    padding: 100px 0px;
     
 }
 
@@ -334,35 +423,96 @@ table {
     align-content: center;
     margin-top: 90px;
 }
-
 .block6 {
     display: flex;
     position: relative;
-    max-width: 69%;
+    max-width: 100%;
     margin-top: 250px;
     margin-left: 200px;
     margin-right: auto;
     margin-bottom: 50px; 
 }
-   
 
-/* Le conteneur de la carte */
-.card-b6 {
-    display: flex;
+.cards-container {
+display: flex;
     flex-direction: column;
     justify-content: center;
     width: 300px;
     height: 300px;
     background-color: #ffffff;
     border-radius: 12px;
+    overflow: hidden;
+    margin: 3px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, scale 1s ease, opacity 1s ease;
+    opacity: 1;
+    scale : 1;
+
+}
+
+.card-middle {
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 280px;
+    height: 280px;
+    background-color: #ffffff;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     margin: 10px auto;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;   
-
+    transition: box-shadow 0.3s ease, transform 1s ease , scale 1s ease , opacity 1s ease;
+    opacity: 0.6; 
+    scale: 1.15; 
 }
-.card-b6:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
+
+.card-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 280px;
+    height: 280px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 10px auto;
+    transition: box-shadow 0.3s ease, scale 1s ease , opacity 1s ease;
+    opacity: 0.6; 
+    scale: 1.15; 
+}
+
+.card-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 280px;
+    height: 280px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 10px auto;
+    transition: box-shadow 0.3s ease, scale 1s ease , opacity 1s ease;
+    opacity: 0.6; 
+    scale: 1.15; 
+}
+
+.card-middle:hover {
+    opacity: 1; 
+    scale: 1;
+}
+
+.card-left:hover {
+
+    opacity: 1; 
+    scale: 1;
+}
+
+.card-right:hover {
+
+    opacity: 1; 
+    scale: 1;
 }
 
 .card-img-b6 {
@@ -370,15 +520,13 @@ table {
     height: 80%;
 }
 
-/* Le contenu global (pour gérer les espacements internes) */
 .card-body-b6 {
     padding: 15px;
 }
 
-/* Le titre de la carte */
 .card-title-b6 {
     display: flex;
-        flex-direction: column;
+    flex-direction: column;
     justify-content: center;
     padding-top: 5px;
     font-size: 17px;
@@ -393,14 +541,17 @@ table {
   position:absolute;
   font-size: 11px;
   background-color: #3e83e0;
-  margin-left: 18%;
-  margin-top: -3%;
+  margin-left: 60%;
+  margin-top:-12%;
   color: #fff;
   border: 0px;
   border-radius: 5px;
   padding: 4px;
- 
   font-weight: bold;
+}
+
+.card-right-last {
+    
 }
 
 .Title-b7 {
